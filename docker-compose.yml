@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  reddcoin-qt:
+    image: guggerf/reddcoin
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - '~/crypto/reddcoin:/reddcoin'
+      - '/tmp/.X11-unix:/tmp/.X11-unix'
+    stdin_open: true
+    tty: true
+    command: /opt/reddcoin/bin/reddcoin-qt
+
+  reddcoin:
+    image: guggerf/reddcoin
+    volumes:
+      - '~/crypto/reddcoin:/reddcoin'
